@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+from setuptools import setup, find_packages
+import versioneer
+
+setup(
+    name='diffuseTools',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
+    author='Eric Charles',
+    author_email='echarles@slac.stanford.edu',
+    description='Collection of tools for LAT diffuse analysis',
+    license='BSD',
+    packages=find_packages(),
+    include_package_data=True,
+    url="https://github.com/fermiPy/diffuseTools",
+    classifiers=[
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Topic :: Scientific/Engineering :: Astronomy',
+        'Development Status :: 4 - Beta',
+    ],
+    scripts=[],
+    entry_points={'console_scripts': [
+        'fermitool-add_dss_keywords = diffuseTools.scripts.add_dss_keywords:main',
+        'fermitool-adjust_template = diffuseTools.scripts.adjust_template:main',
+        'fermitool-clip_hdu = diffuseTools.scripts.clip_hdu:main',
+        'fermitool-compare_fermipy_gardian = diffuseTools.scripts.compare_fermipy_gardian:main',
+        'fermitool-gardian_convert_results = diffuseTools.scripts.gardian_convert_results:main',
+        'fermitool-gardian_combine_dnm = diffuseTools.scripts.gardian_combine_dnm:main',
+        'fermitool-gardian_npred_txt2yaml = diffuseTools.scripts.gardian_npred_txt2yaml:main',
+        'fermitool-gardian_mapsums = diffuseTools.scripts.gardian_mapsums:main',
+        'fermitool-gardian_srcmap_sums = diffuseTools.scripts.gardian_srcmap_sums:main',
+        'fermitool-gardian_isomap_sums = diffuseTools.scripts.gardian_isomap_sums:main',
+        'fermitool-fermipy_load = diffuseTools.scripts.fermipy_load:main',
+        'fermitool-fermipy_setup = diffuseTools.scripts.fermipy_setup:main',
+        'fermitool-fermipy_npred_npy2yaml = diffuseTools.scripts.fermipy_npred_npy2yaml:main',
+        'fermitool-fermipy_srcmap_sums = diffuseTools.scripts.fermipy_srcmap_sums:main',
+        'fermitool-plot_diffuse_srcmaps = diffuseTools.scripts.plot_diffuse_srcmaps:main',
+        'fermitool-plot_diffuse_npreds = diffuseTools.scripts.plot_diffuse_npreds:main',
+        'fermitool-plot_diffuse_summary = diffuseTools.scripts.plot_diffuse_summary:main',
+    ]},
+    install_requires=[
+        'numpy >= 1.6.1',
+        'pyyaml >= 3.12',
+        'astropy >= 1.2.1',
+        'matplotlib >= 1.5.0',
+        'scipy >= 0.14',
+        'fermipy >= 0.17.3',
+        'healpy',
+    ],
+    extras_require=dict(
+        all=[],
+    ),
+)

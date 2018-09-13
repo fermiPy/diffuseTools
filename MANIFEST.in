@@ -1,0 +1,2 @@
+include versioneer.py
+include diffuseTools/_version.py
