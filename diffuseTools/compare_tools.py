@@ -61,6 +61,8 @@ def compare_counts(comp_map, input_pref, gard_pref, src_dict):
         fname_gard = "%s_ModelComponentsCounts/%s.txt"%(gard_pref, v)
         counts = read_gardian_counts(fname_gard)
         for kk,vv in sorted(counts.items()):
+            if kk in ['Energies', 'E_widths']:
+                continue
             src = src_dict[kk]
             if not gard_counts.has_key(src):
                 gard_counts[src] = []

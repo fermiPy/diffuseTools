@@ -42,7 +42,7 @@ def main():
         make_diff_maps(comp_map, args.input)
 
     if do_counts:
-        compare_counts(comp_map, args.input, args.gardian, conv_dict)
+        compare_counts(comp_map, args.input, args.gardian, src_dict)
 
 
 if __name__ == '__main__':
